@@ -1,13 +1,14 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { FaUser, FaSearch, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import logo from "../../assets/images/logo.png"
 
 const CustomNavbar = () => {
   return (
     <Navbar bg="white" expand="lg" className="py-3">
       <Container>
         <Navbar.Brand href="/" className="d-flex align-items-center">
-          <img src="../public/image" alt="logo" />
+          <img src={logo} alt="logo" />
           <span style={{ fontWeight: 'bold', fontSize: '34px' }}>Furniro</span>
         </Navbar.Brand>
 
