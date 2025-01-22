@@ -1,46 +1,67 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import sectionBg from "../../assets/images/section_background.png"
+import React from "react";
+import topSectionBg from "../../assets/images/section_background.png";
 
-const ShopSection = () => {
+const TopSection = () => {
   return (
     <div
+      className="container-fluid"
       style={{
-        backgroundImage: `url(${sectionBg})`, // Replace with your image URL
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '300px',
-        position: 'relative',
+        height: "300px",
+        padding: 0,
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      {/* Overlay content */}
+      {/* Blurred Background */}
       <div
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(255, 255, 255, 0.8)', // White overlay with transparency
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          width: "100%",
+          height: "100%",
+          backgroundImage: `url(${topSectionBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(2px)",
+          zIndex: 1,
+        }}
+      ></div>
+
+      {/* Semi-transparent Overlay */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          zIndex: 2,
+        }}
+      ></div>
+
+      {/* Text Content */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 3, // Ensures the text is on top
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
         }}
       >
-        <Container>
-          <Row className="text-center">
-            <Col>
-              <h1 style={{ fontSize: '48px', fontWeight: 'bold', margin: 0 }}>Shop</h1>
-              <p style={{ marginTop: '10px', fontSize: '16px', color: '#333' }}>
-                <span>Home</span> <span style={{ margin: '0 8px' }}>&gt;</span> <span>Shop</span>
-              </p>
-            </Col>
-          </Row>
-        </Container>
+        <h1 style={{ fontSize: "2.5rem", margin: 0 }}>
+          Shop
+        </h1>
+        <p style={{ fontSize: "1rem", margin: 0}}>
+          <b>Home</b> &gt; Shop
+        </p>
       </div>
     </div>
   );
 };
 
-export default ShopSection;
+export default TopSection;
