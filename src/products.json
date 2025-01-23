@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "category": "Electronics",
+    "price": 19.99,
+    "discounted_price": 10.00,
+    "description": "High-performance wireless earbuds",
+    "image": "./item.png"
+  },
+  {
+    "id": 2,
+    "name": "Product 2", 
+    "category": "Home Decor",
+    "price": 29.99,
+    "discounted_price": 20.00,
+    "description": "Minimalist ceramic vase",
+    "image": "./item.png"
+  },
+  {
+    "id": 3,
+    "name": "Product 3",
+    "category": "Clothing",
+    "price": 49.99,
+    "discounted_price": 35.00,
+    "description": "Comfortable cotton hoodie",
+    "image": "./item.png"
+  },
+  {
+    "id": 4,
+    "name": "Product 4",
+    "category": "Kitchen",
+    "price": 89.99,
+    "discounted_price": 65.50,
+    "description": "Smart coffee maker with WiFi",
+    "image": "./item.png"
+  },
+  {
+    "id": 5,
+    "name": "Product 5",
+    "category": "Sports",
+    "price": 129.99,
+    "discounted_price": 99.00,
+    "description": "Professional yoga mat set",
+    "image": "./item.png"
+  }
+]
