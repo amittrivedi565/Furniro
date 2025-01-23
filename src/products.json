@@ -4,10 +4,11 @@
     "name": "Product 1",
     "category": "Electronics",
     "price": 19.99,
-    "discounted_price": 10.00,
+    "discounted_price": null,
     "description": "High-performance wireless earbuds",
-    "image": "./item.png"
-  },
+    "image": "./item.png",
+    "discount" : "50%"
+  },  
   {
     "id": 2,
     "name": "Product 2", 
@@ -15,7 +16,8 @@
     "price": 29.99,
     "discounted_price": 20.00,
     "description": "Minimalist ceramic vase",
-    "image": "./item.png"
+    "image": "./item.png" ,
+    "discount" : "50%"  
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "price": 49.99,
     "discounted_price": 35.00,
     "description": "Comfortable cotton hoodie",
-    "image": "./item.png"
+    "image": "./item.png",
+    "discount" : "50%"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "price": 89.99,
     "discounted_price": 65.50,
     "description": "Smart coffee maker with WiFi",
-    "image": "./item.png"
+    "image": "./item.png",
+    "discount" : "50%"
   },
   {
     "id": 5,
@@ -42,6 +46,7 @@
     "price": 129.99,
     "discounted_price": 99.00,
     "description": "Professional yoga mat set",
-    "image": "./item.png"
+    "image": "./item.png",
+    "discount" : "50%"
   }
 ]
