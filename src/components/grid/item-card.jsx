@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { ReactComponent as ShareIcon } from "../../assets/svgs/item-card/share.svg";
+import { ReactComponent as CompareIcon } from "../../assets/svgs/item-card/compare.svg";
+import { ReactComponent as LikeIcon } from "../../assets/svgs/item-card/heart.svg";
 
 const ItemCard = ({ product }) => {
     const { name, category, price, discounted_price, image, discount } = product;
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <div 
-            className="item-card d-flex flex-column mt-5" 
+        <div
+            className="item-card d-flex flex-column mt-5"
             style={{
                 width: "285px",
                 height: "420px",
@@ -14,21 +17,21 @@ const ItemCard = ({ product }) => {
                 overflow: "hidden",
                 position: "relative",
                 borderRadius: "8px",
-                transition: "background-color 0.3s ease"
+                transition: "background-color 0.3s ease",
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <div 
-                className="item-image" 
-                style={{ 
-                    position: "relative", 
-                    width: "100%", 
-                    height: "300px", 
-                    overflow: "hidden" 
+            <div
+                className="item-image"
+                style={{
+                    position: "relative",
+                    width: "100%",
+                    height: "300px",
+                    overflow: "hidden",
                 }}
             >
-                <img 
+                <img
                     style={{
                         width: "100%",
                         height: "300px",
@@ -36,14 +39,14 @@ const ItemCard = ({ product }) => {
                         borderTopLeftRadius: "8px",
                         borderTopRightRadius: "8px",
                         transition: "filter 0.3s ease",
-                        filter: isHovered ? "grayscale(100%)" : "none"
-                    }} 
-                    src={`/${image.replace('./', '')}`} 
-                    alt={name} 
+                        filter: isHovered ? "grayscale(100%)" : "none",
+                    }}
+                    src={`/${image.replace("./", "")}`}
+                    alt={name}
                 />
                 {/* Tags */}
                 {!isHovered && discount === null && (
-                    <div 
+                    <div
                         style={{
                             width: "50px",
                             height: "50px",
@@ -59,14 +62,14 @@ const ItemCard = ({ product }) => {
                             right: "10px",
                             fontWeight: "bold",
                             fontSize: "14px",
-                            zIndex: 2
+                            zIndex: 2,
                         }}
                     >
                         New
                     </div>
                 )}
                 {!isHovered && discount && (
-                    <div 
+                    <div
                         style={{
                             width: "50px",
                             height: "50px",
@@ -82,15 +85,15 @@ const ItemCard = ({ product }) => {
                             right: "10px",
                             fontWeight: "bold",
                             fontSize: "14px",
-                            zIndex: 2
+                            zIndex: 2,
                         }}
                     >
                         -{discount}
                     </div>
                 )}
-                {/* Optional Gray Overlay */}
+                {/* Gray Overlay with Buttons */}
                 {isHovered && (
-                    <div 
+                    <div
                         style={{
                             position: "absolute",
                             top: 0,
@@ -101,8 +104,86 @@ const ItemCard = ({ product }) => {
                             zIndex: 1,
                             borderTopLeftRadius: "8px",
                             borderTopRightRadius: "8px",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            flexDirection: "column",
+                            gap: "10px",
                         }}
-                    />
+                    >
+                        <button
+                            style={{
+                                padding: "10px 20px",
+                                marginTop:"5em",
+                                backgroundColor: "#fff",
+                                color: "#B88E2F",
+                                border: "none",
+                                borderRadius: "4px",
+                                cursor: "pointer",
+                                fontWeight: "bold",
+                                transition: "background-color 0.3s ease",
+                            }}
+                            onClick={() => alert(`Added ${name} to cart!`)}
+                        >
+                            Add to Cart
+                        </button>
+                        <div style={{ display: "flex", gap: "5px" }}>
+                            <button
+                                style={{
+                                    border: "none",
+                                    borderRadius: "4px",
+                                    color: "white",
+                                    backgroundColor: "transparent",
+                                    cursor: "pointer",
+                                    fontWeight: "bold",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "5px",  // Space between icon and text
+                                    transition: "background-color 0.3s ease",
+                                }}
+                                onClick={() => alert(`Share ${name}`)}
+                            >
+                                <ShareIcon style={{ width: "12px", height: "13px" }} />
+                                <span>Share</span>
+                            </button>
+                            <button
+                                style={{
+
+                                    border: "none",
+                                    borderRadius: "4px",
+                                    color: "white",
+                                    backgroundColor: "transparent",
+                                    cursor: "pointer",
+                                    fontWeight: "bold",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "5px",  // Space between icon and text
+                                    transition: "background-color 0.3s ease",
+                                }}
+                                onClick={() => alert(`Compare ${name}`)}
+                            >
+                                <CompareIcon style={{ width: "12px", height: "13px" }} />
+                                <span>Compare</span>
+                            </button>
+                            <button
+                                style={{
+                                    border: "none",
+                                    color: "white",
+                                    backgroundColor: "transparent",
+                                    cursor: "pointer",
+                                    fontWeight: "bold",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "5px",  // Space between icon and text
+                                    transition: "background-color 0.3s ease",
+                                }}
+                                onClick={() => alert(`Liked ${name}`)}
+                            >
+                                <LikeIcon style={{ width: "12px", height: "13px" }} />
+                                <span>Like</span>
+                            </button>
+                        </div>
+                    </div>
                 )}
             </div>
             <div className="container mt-2">
